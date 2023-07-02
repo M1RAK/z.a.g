@@ -1,0 +1,21 @@
+{
+  "name": "z.a.g",
+  "version": "1.0.0",
+  "description": "An e-commerce company based in kano, NG.",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon run dev"
+  },
+  "author": "ara",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "dotenv": "^16.3.1",
+    "nodemon": "^2.0.22"
+  }
+}

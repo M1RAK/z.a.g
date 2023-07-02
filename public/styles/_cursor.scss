@@ -1,0 +1,21 @@
+.cursor-dot {
+	width: 9px;
+	height: 9px;
+	background-color: var(--clr-accent);
+}
+
+.cursor-outline {
+	width: 30px;
+	height: 30px;
+	border: 3px solid var(--clr-secondary);
+}
+
+.cursor-dot,
+.cursor-outline {
+	position: fixed;
+	top: 0;
+	left: 0;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	pointer-events: none;
+}

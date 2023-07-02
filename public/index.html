@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+			integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link rel="stylesheet" href="./styles/home.css" />
+		<script defer src="./js/index.js"></script>
+		<script defer src="./js/cursor.js"></script>
+		<title>Z.A.G</title>
+	</head>
+	<body>
+		<!-- Navigation -->
+		<nav class="nav">
+			<!-- Nav-logo -->
+			<h1 class="header-logo">Z.A.G</h1>
+
+			<!-- Nav-links -->
+			<!-- <ul class="nav__list">
+				<li>
+					<a class="nav__link nav__link--active" href="#">Shoes</a>
+				</li>
+				<li>
+					<a class="nav__link" href="#">Watches</a>
+				</li>
+				<li>
+					<a class="nav__link" href="#">Acessories</a>
+				</li>
+				<li>
+					<a class="nav__link" href="#">Collections</a>
+				</li>
+			</ul> -->
+
+			<!-- Nav-right -->
+		</nav>
+
+		<!-- Main -->
+		<main>
+			<!-- Hero-section -->
+			<div class="section section__hero">
+				<div class="section__hero--left">
+					<h1>
+						WHERE
+						<span
+							class="text__blue"
+							style="color: var(--clr-accent)"
+							>ASTHETICS</span
+						>
+						<br />
+						MEET <br />
+						FUNCTIONALITY
+					</h1>
+
+					<button class="btn btn__cta">
+						<a href="#subscribe">Join the waitlist.</a>
+					</button>
+				</div>
+				<div class="section__hero--right">
+					<img
+						src="./assets/images/hero-banner.png"
+						alt="hero-banner"
+						class="hero__img--main"
+					/>
+				</div>
+			</div>
+			<!-- End of Hero -->
+
+			<!-- Filter Tabs -->
+			<div class="tabs">
+				<span class="filter__tab"> Bestsellers</span>
+				<span class="filter__tab">Watches</span>
+				<span class="filter__tab">Shoes</span>
+				<span class="filter__tab">Jackets</span>
+				<span class="filter__tab">Others</span>
+				<span class="filter__tab filter__tab--remove">
+					<i class="fa-solid fa-trash"></i> Clear
+				</span>
+			</div>
+			<!-- End of Filter Tabs  -->
+
+			<!-- Products Section -->
+			<div class="section section__products">
+				<!-- Single product -->
+				<div class="product">
+					<img
+						src="./assets/images/product-1.png"
+						alt="product-1"
+						class="product__img"
+					/>
+					<div class="product__meta">
+						<span class="product__title">Shiffon Shirt</span>
+						<span class="product__price"> ₦ 4,500 </span>
+					</div>
+				</div>
+				<!-- End of single product -->
+
+				<!-- Single product -->
+				<div class="product">
+					<img
+						src="./assets/images/product-2.png"
+						alt="product-2"
+						class="product__img"
+					/>
+					<div class="product__meta">
+						<span class="product__title">Shiffon Shirt</span>
+						<span class="product__price"> ₦ 4,500 </span>
+					</div>
+				</div>
+				<!-- End of single product -->
+
+				<!-- Single product -->
+				<div class="product">
+					<img
+						src="./assets/images/product-3.png"
+						alt="product-3"
+						class="product__img"
+					/>
+					<div class="product__meta">
+						<span class="product__title">Shiffon Shirt</span>
+						<span class="product__price"> ₦ 4,500 </span>
+					</div>
+				</div>
+				<!-- End of single product -->
+
+				<!-- Single product -->
+				<div class="product">
+					<img
+						src="./assets/images/product-4.png"
+						alt="product-4"
+						class="product__img"
+					/>
+					<div class="product__meta">
+						<span class="product__title">Shiffon Shirt</span>
+						<span class="product__price"> ₦ 4,500 </span>
+					</div>
+				</div>
+				<!-- End of single product -->
+
+				<!-- Single product -->
+				<div class="product">
+					<img
+						src="./assets/images/product-5.png"
+						alt="product-5"
+						class="product__img"
+					/>
+					<div class="product__meta">
+						<span class="product__title">Shiffon Shirt</span>
+						<span class="product__price"> ₦ 4,500 </span>
+					</div>
+				</div>
+				<!-- End of single product -->
+
+				<!-- Single product -->
+				<div class="product">
+					<img
+						src="./assets/images/product-6.png"
+						alt="product-6"
+						class="product__img"
+					/>
+					<div class="product__meta">
+						<span class="product__title">Shiffon Shirt</span>
+						<span class="product__price"> ₦ 4,500 </span>
+					</div>
+				</div>
+				<!-- End of single product -->
+			</div>
+			<!-- End of Products Section -->
+			<div class="btn__container">
+				<button class="btn">
+					<i class="fa-regular fa-eye"></i>
+					See More
+				</button>
+			</div>
+
+			<!-- Newsletter Section -->
+			<div id="subscribe" class="section section__newsletter">
+				<div class="newsletter">
+					<div class="newsletter__meta">
+						<h2>Join in the Conversation.</h2>
+						<p>Subscribe to get notified when we launch.</p>
+						<form
+							method="post"
+							action="/signup"
+							class="newsletter__form"
+						>
+							<input
+								placeholder="nasiraminu89@gmail.com"
+								type="text"
+								class="newsletter__input"
+								required
+								pattern="[/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/]"
+							/>
+							<span class="input__btn--float">
+								<i
+									class="fa-sharp fa-solid fa-chevron-right"
+								></i>
+							</span>
+						</form>
+					</div>
+					<img
+						src="./assets/images/hero-banner.png"
+						alt="hero-banner"
+						class="newsletter__img"
+					/>
+				</div>
+			</div>
+			<!-- Newsletter Section -->
+		</main>
+
+		<!-- Custom Cursor -->
+		<div class="cursor-dot"></div>
+		<div class="cursor-outline"></div>
+
+		<!-- Footer -->
+		<footer>
+			<div class="footer__top">
+				<h2 class="footer-logo">Z.A.G</h2>
+				<div class="footer__links">
+					<i class="fa-brands fa-instagram fa-2x"></i>
+					<i class="fa-brands fa-facebook fa-2x"></i>
+					<i class="fa-brands fa-whatsapp fa-2x"></i>
+				</div>
+			</div>
+			<div class="footer__bottom">
+				<span class="copyright">
+					&copy; All rights reserved, Z.A.G L.L.C, 2023
+				</span>
+			</div>
+		</footer>
+	</body>
+</html>
