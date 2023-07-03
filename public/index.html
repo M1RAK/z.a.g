@@ -11,6 +11,19 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
+		<script id="mcjs">
+			!(function (c, h, i, m, p) {
+				;(m = c.createElement(h)),
+					(p = c.getElementsByTagName(h)[0]),
+					(m.async = 1),
+					(m.src = i),
+					p.parentNode.insertBefore(m, p)
+			})(
+				document,
+				'script',
+				'https://chimpstatic.com/mcjs-connected/js/users/04dc5a156861bc5727f5577b6/85668739df2320eabd15f7dae.js'
+			)
+		</script>
 		<link rel="stylesheet" href="./styles/home.css" />
 		<script defer src="./js/index.js"></script>
 		<script defer src="./js/cursor.js"></script>
@@ -23,7 +36,7 @@
 			<h1 class="header-logo">Z.A.G</h1>
 
 			<!-- Nav-links -->
-			<!-- <ul class="nav__list">
+			<ul class="nav__list">
 				<li>
 					<a class="nav__link nav__link--active" href="#">Shoes</a>
 				</li>
@@ -36,10 +49,15 @@
 				<li>
 					<a class="nav__link" href="#">Collections</a>
 				</li>
-			</ul> -->
+			</ul>
 
 			<!-- Nav-right -->
 		</nav>
+
+		<!-- Marquee -->
+		<div class="marquee">
+			<p>Z.A.G is coming to Kano, Launching October, 1st 23.</p>
+		</div>
 
 		<!-- Main -->
 		<main>
@@ -190,18 +208,20 @@
 							action="/signup"
 							class="newsletter__form"
 						>
-							<input
-								placeholder="nasiraminu89@gmail.com"
-								type="text"
-								class="newsletter__input"
-								required
-								pattern="[/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/]"
-							/>
-							<span class="input__btn--float">
-								<i
-									class="fa-sharp fa-solid fa-chevron-right"
-								></i>
-							</span>
+							<div class="input__container">
+								<input
+									placeholder="nasiraminu89@gmail.com"
+									type="text"
+									class="newsletter__input"
+									pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+									required
+								/>
+								<span class="input__btn--float">
+									<i
+										class="fa-sharp fa-solid fa-chevron-right"
+									></i>
+								</span>
+							</div>
 						</form>
 					</div>
 					<img

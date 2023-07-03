@@ -1,8 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&display=swap");
+@font-face {
+  font-family: "Whyte";
+  src: url("../assets/fonts/Whyte-Bold.woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Whyte";
+  src: url("../assets/fonts/Whyte-Medium.woff2");
+  font-weight: medium;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Whyte";
+  src: url("../assets/fonts/Whyte-Regular.woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Oddval";
+  font-family: "Josefin Sans";
 }
 
 :root {
@@ -22,6 +44,7 @@
   --fs-800: 3rem;
   --fs-900: 3.5rem;
   --fs-lg: 4.5rem;
+  --bx-1: 4px 4px 0 rgba(0, 0, 0, 1);
   --tr-1: all ease 0.5s;
   --tr-2: all ease 0.3s;
 }
@@ -62,7 +85,6 @@ body {
 }
 
 .header-logo {
-  margin: 0 auto;
   font-size: var(--fs-700);
   color: var(--clr-accent);
 }
@@ -120,7 +142,15 @@ footer .footer__links {
   gap: 1rem;
 }
 
+@media (max-width: 745px) {
+  .header-logo {
+    margin: 0 auto;
+  }
+}
 @media (max-width: 500px) {
+  .header-logo {
+    margin: 0 auto;
+  }
   body {
     margin: 1rem 0.5rem;
   }

@@ -3,7 +3,6 @@ const btnEl = document.querySelector('.input__btn--float')
 const filterEls = document.querySelectorAll('.filter__tab')
 
 // adds check to filter option
-
 filterEls.forEach((tab) => {
 	tab.addEventListener('click', () => {
 		const text = tab.textContent
@@ -23,24 +22,36 @@ const checked = () => {
 
 filterEls[5].addEventListener('click', checked)
 
+//  Error-Handler
+
+function error() {
+	location.replace('https://z-a-g.vercel.app/not-found.html')
+}
+
+//  Clear Input
+function clearInput() {
+	inputEl.value = ''
+}
+
 //  saves subscriber's email to mailchimp
 btnEl.addEventListener('click', (e) => {
 	e.preventDefault()
 
-	if (inputEl.value == '') return error('Please add your email.')
+	if (inputEl.value == '') return error()
 
-	const email = JSON.stringify(inputEl.value)
 	const data = {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'
 		},
-		body: { email }
+		body: JSON.stringify({ email: inputEl.value })
 	}
 
 	fetch('/subscribe', data).then((res) => {
 		if (!res.ok) {
-			return error('Please add your email.')
+			return error()
 		}
 	})
+
+	clearInput()
 })

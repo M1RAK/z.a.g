@@ -1,30 +1,30 @@
-.cursor-dot {
-  width: 9px;
-  height: 9px;
-  background-color: var(--clr-accent);
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&display=swap");
+@font-face {
+  font-family: "Whyte";
+  src: url("../assets/fonts/Whyte-Bold.woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
-
-.cursor-outline {
-  width: 30px;
-  height: 30px;
-  border: 3px solid var(--clr-secondary);
+@font-face {
+  font-family: "Whyte";
+  src: url("../assets/fonts/Whyte-Medium.woff2");
+  font-weight: medium;
+  font-style: normal;
+  font-display: swap;
 }
-
-.cursor-dot,
-.cursor-outline {
-  position: fixed;
-  top: 0;
-  left: 0;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  pointer-events: none;
+@font-face {
+  font-family: "Whyte";
+  src: url("../assets/fonts/Whyte-Regular.woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Oddval";
+  font-family: "Josefin Sans";
 }
 
 :root {
@@ -44,6 +44,7 @@
   --fs-800: 3rem;
   --fs-900: 3.5rem;
   --fs-lg: 4.5rem;
+  --bx-1: 4px 4px 0 rgba(0, 0, 0, 1);
   --tr-1: all ease 0.5s;
   --tr-2: all ease 0.3s;
 }
@@ -84,7 +85,6 @@ body {
 }
 
 .header-logo {
-  margin: 0 auto;
   font-size: var(--fs-700);
   color: var(--clr-accent);
 }
@@ -142,7 +142,15 @@ footer .footer__links {
   gap: 1rem;
 }
 
+@media (max-width: 745px) {
+  .header-logo {
+    margin: 0 auto;
+  }
+}
 @media (max-width: 500px) {
+  .header-logo {
+    margin: 0 auto;
+  }
   body {
     margin: 1rem 0.5rem;
   }
@@ -153,6 +161,57 @@ footer .footer__links {
     align-items: center;
   }
 }
+.cursor-dot {
+  width: 9px;
+  height: 9px;
+  background-color: var(--clr-accent);
+}
+
+.cursor-outline {
+  width: 30px;
+  height: 30px;
+  border: 3px solid var(--clr-secondary);
+}
+
+.cursor-dot,
+.cursor-outline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.marquee {
+  margin: 1rem 0;
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+  background: var(--clr-secondary);
+  color: #000;
+  border: 2px solid var(--clr-accent);
+}
+.marquee p {
+  font-size: 1.25rem;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  line-height: 50px;
+  text-align: center;
+  transform: translateX(100%);
+  animation: scroll-left 20s linear infinite;
+}
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 main {
   margin: 4.5rem 0;
 }
@@ -192,6 +251,7 @@ main .section__products .product {
   background-color: var(--clr-secondary);
   border: 2px solid #000;
   border-radius: 8px;
+  box-shadow: var(--bx-1);
 }
 main .section__products .product__img {
   border-radius: 5px 5px 0px 0px;
@@ -218,7 +278,7 @@ main .section__newsletter {
   border-radius: 8px;
 }
 main .section__newsletter .newsletter {
-  height: 400px;
+  height: 395px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -231,6 +291,7 @@ main .section__newsletter .newsletter__meta {
   align-items: center;
   flex-direction: column;
   height: 100%;
+  width: 100%;
   padding: 0 0.5rem;
 }
 main .section__newsletter .newsletter__meta h2 {
@@ -240,8 +301,14 @@ main .section__newsletter .newsletter__meta h2 {
 main .section__newsletter .newsletter__meta p {
   margin-bottom: 2rem;
 }
-main .section__newsletter .newsletter__meta input {
-  width: 450px;
+main .section__newsletter .newsletter__meta .input__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .section__newsletter .newsletter__meta .input__container input {
+  display: inline-flex;
+  width: 400px;
   height: 50px;
   text-indent: 1rem;
   font-size: 1.1rem;
@@ -249,17 +316,17 @@ main .section__newsletter .newsletter__meta input {
   outline: 1px solid var(--clr-accent);
   border-radius: 5px 0 0 5px;
 }
-main .section__newsletter .newsletter__meta .input__btn--float {
+main .section__newsletter .newsletter__meta .input__container .input__btn--float {
   display: inline-block;
   border-radius: 8px;
-  padding: 1rem 2.25rem;
+  padding: 1.2rem 2.25rem;
   background-color: var(--clr-secondary);
   margin-left: -1rem;
 }
-main .section__newsletter .newsletter__meta .input__btn--float:hover {
+main .section__newsletter .newsletter__meta .input__container .input__btn--float:hover {
   background-color: var(--clr-accent);
 }
-main .section__newsletter .newsletter__meta .input__btn--float:hover i {
+main .section__newsletter .newsletter__meta .input__container .input__btn--float:hover i {
   transform: translateX(10px);
   transition: var(--tr-1);
 }
@@ -340,6 +407,9 @@ main .tabs .filter__tab:hover {
   }
 }
 @media (max-width: 745px) {
+  nav .nav__list {
+    display: none;
+  }
   main .section__products {
     border: none;
   }
@@ -354,8 +424,7 @@ main .tabs .filter__tab:hover {
     font-size: var(--fs-500);
     white-space: normal;
   }
-  main .section__newsletter .newsletter__meta input {
-    display: inline-flex;
+  main .section__newsletter .newsletter__meta .input__container input {
     width: auto;
     text-indent: 0.5rem;
     font-size: 1rem;
@@ -368,5 +437,8 @@ main .tabs .filter__tab:hover {
   main .section__hero h1 {
     font-size: var(--fs-700);
     white-space: normal;
+  }
+  main .section .input__btn--float {
+    margin-left: 0;
   }
 }

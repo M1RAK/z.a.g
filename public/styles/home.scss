@@ -1,6 +1,7 @@
 // @PARTIALS
-@import './cursor';
 @import './globals';
+@import './cursor';
+@import './marquee';
 
 main {
 	margin: 4.5rem 0;
@@ -43,6 +44,7 @@ main {
 				background-color: var(--clr-secondary);
 				border: 2px solid #000;
 				border-radius: 8px;
+				box-shadow: var(--bx-1);
 
 				&__img {
 					border-radius: 5px 5px 0px 0px;
@@ -75,7 +77,7 @@ main {
 			border-radius: 8px;
 
 			.newsletter {
-				height: 400px;
+				height: 395px;
 				@include flex(space-between);
 				align-items: flex-start;
 				gap: 1rem;
@@ -84,6 +86,7 @@ main {
 					@include flex(center);
 					flex-direction: column;
 					height: 100%;
+					width: 100%;
 					padding: 0 0.5rem;
 
 					h2 {
@@ -94,28 +97,34 @@ main {
 						margin-bottom: 2rem;
 					}
 
-					input {
-						width: 450px;
-						height: 50px;
-						text-indent: 1rem;
-						font-size: 1.1rem;
-						border: none;
-						outline: 1px solid var(--clr-accent);
-						border-radius: 5px 0 0 5px;
-					}
+					.input__container {
+						@include flex(center);
+						
 
-					.input__btn--float {
-						display: inline-block;
-						border-radius: 8px;
-						padding: 1rem 2.25rem;
-						background-color: var(--clr-secondary);
-						margin-left: -1rem;
+						input {
+							display: inline-flex;
+							width: 400px;
+							height: 50px;
+							text-indent: 1rem;
+							font-size: 1.1rem;
+							border: none;
+							outline: 1px solid var(--clr-accent);
+							border-radius: 5px 0 0 5px;
+						}
 
-						&:hover {
-							background-color: var(--clr-accent);
-							i {
-								transform: translateX(10px);
-								transition: var(--tr-1);
+						.input__btn--float {
+							display: inline-block;
+							border-radius: 8px;
+							padding: 1.2rem 2.25rem;
+							background-color: var(--clr-secondary);
+							margin-left: -1rem;
+
+							&:hover {
+								background-color: var(--clr-accent);
+								i {
+									transform: translateX(10px);
+									transition: var(--tr-1);
+								}
 							}
 						}
 					}
@@ -225,6 +234,11 @@ main {
 }
 
 @media (max-width: 745px) {
+	nav {
+		.nav__list {
+			display: none;
+		}
+	}
 	main {
 		// Sections
 		.section {
@@ -241,12 +255,14 @@ main {
 							font-size: var(--fs-500);
 							white-space: normal;
 						}
-						input {
-							display: inline-flex;
-							width: auto;
-							text-indent: 0.5rem;
-							font-size: 1rem;
-						}
+				.input__container{
+					input {
+							
+						width: auto;
+						text-indent: 0.5rem;
+						font-size: 1rem;
+					}
+				}
 					}
 				}
 			}
@@ -267,6 +283,10 @@ main {
 					font-size: var(--fs-700);
 					white-space: normal;
 				}
+			}
+
+			.input__btn--float {
+				margin-left: 0;
 			}
 		}
 	}

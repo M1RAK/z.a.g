@@ -1,9 +1,13 @@
+//  @IMPORTS
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&display=swap');
+
+
 // BASE STYLES
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: 'Oddval';
+	font-family: 'Josefin Sans';
 }
 
 :root {
@@ -28,6 +32,9 @@
 	--fs-800: 3rem;
 	--fs-900: 3.5rem;
 	--fs-lg: 4.5rem;
+
+	//Box-Shadows
+	--bx-1: 4px 4px 0 rgba(0, 0, 0, 1);
 
 	// Transitions
 	--tr-1: all ease 0.5s;
@@ -83,7 +90,7 @@ body {
 // HEADER STYLES
 
 .header-logo {
-	margin: 0 auto;
+	// margin: 0 auto;
 	font-size: var(--fs-700);
 	color: var(--clr-accent);
 }
@@ -147,7 +154,16 @@ footer {
 	}
 }
 
+@media (max-width: 745px) {
+	.header-logo {
+		margin: 0 auto;
+	}
+}
+
 @media (max-width: 500px) {
+	.header-logo {
+		margin: 0 auto;
+	}
 	body {
 		margin: 1rem 0.5rem;
 	}

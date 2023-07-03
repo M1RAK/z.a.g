@@ -4,7 +4,6 @@
 
 ₦ - Naira Symbol
 
-
 <i class="fa-solid fa-check fa-sm"></i>
 <i class="fa-solid fa-check fa-sm"></i>
 <i class="fa-solid fa-check fa-sm"></i>
@@ -12,13 +11,12 @@
 
 ### 01-07-23
 
--   Finish the newsletter section.
-    -- Create newsletter Modal
-    -- Mailchimp Api Connection
-    -- Share and create accounts for Z.A.G
-
+-   Finish the newsletter section. ✅
+    -- Create newsletter Modal. ✅
+    -- Mailchimp Api Connection. ✅
 
 <!-- MC-API -->
+
 ```zsh
 curl -sS \
   "https://us8.api.mailchimp.com/3.0/ping" \
@@ -201,3 +199,114 @@ API_KEY=xkeysib-466789483ed6ffc5bac864e806ae0014c32cc5d84f9783e21a65261d075ffcdd
 <!-- Confirmation url -->
 
 https://683d6197.sibforms.com/serve/MUIFAMwduqFiGTbIOGyqbe6fJ5nezSRYaLwcguL4zdUyHixpL47p02fwVlt2VKt4zjpoiU25VUXy9BKlKk1QdPyz4ct3BdIMqZuBse89l4G5xmVVTENsHlWH2i_QUxcOtgDUodQ5lfhBryDiPfJ52DWjUvjRexhEFLO5n8LA5EHS8ymlAu-yy_q2MDA6_hdLLMqwUYsTjD3XRTMP
+
+## 02-07-23
+
+    -- Share and create accounts for Z.A.G. ✅ 
+<!-- @font-face -->
+
+```css
+@font-face {
+	  font-family: myFirstFont;
+	src: url(sansation_bold.woff);
+	font-weight: bold;
+}
+```
+
+<!-- Marquee -->
+```html
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <style>
+            .marquee {
+                height: 50px;
+                overflow: hidden;
+                position: relative;
+                background: #fefefe;
+                color: #333;
+                border: 1px solid #4a4a4a;
+            }
+            
+            .marquee p {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                line-height: 50px;
+                text-align: center;
+                -moz-transform: translateX(100%);
+                -webkit-transform: translateX(100%);
+                transform: translateX(100%);
+                -moz-animation: scroll-left 2s linear infinite;
+                -webkit-animation: scroll-left 2s linear infinite;
+                animation: scroll-left 20s linear infinite;
+            }
+            
+            @-moz-keyframes scroll-left {
+                0% {
+                    -moz-transform: translateX(100%);
+                }
+                100% {
+                    -moz-transform: translateX(-100%);
+                }
+            }
+            
+            @-webkit-keyframes scroll-left {
+                0% {
+                    -webkit-transform: translateX(100%);
+                }
+                100% {
+                    -webkit-transform: translateX(-100%);
+                }
+            }
+            
+            @keyframes scroll-left {
+                0% {
+                    -moz-transform: translateX(100%);
+                    -webkit-transform: translateX(100%);
+                    transform: translateX(100%);
+                }
+                100% {
+                    -moz-transform: translateX(-100%);
+                    -webkit-transform: translateX(-100%);
+                    transform: translateX(-100%);
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="marquee">
+            <p> Marquee in CSS </p>
+        </div>
+    </body>
+
+</html>
+
+<!-- Font -->
+```css
+@font-face {
+	font-family: 'Whyte';
+	src: url('../assets/fonts/Whyte-Bold.woff2');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Whyte';
+	src: url('../assets/fonts/Whyte-Medium.woff2');
+	font-weight: medium;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Whyte';
+	src: url('../assets/fonts/Whyte-Regular.woff2');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
