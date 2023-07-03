@@ -23,22 +23,25 @@ mailchimp.setConfig({
 
 const listId = process.env.AUDIENCE_ID
 
-async function addSubscriber(email) {
-	await mailchimp.lists.addListMember(listId, {
-		email_address: email,
-		status: 'subscribed'
-	})
-}
-
 app.post('/subscribe', (req, res) => {
 	const { email } = req.body
 
 	if (email) {
-		addSubscriber(email)
-		res.status(200).json({
-			message: 'Successfully added contact as an audience member.'
-		})
+		addSubscriber()
 	}
+
+	async function addSubscriber() {
+		const response = await mailchimp.lists.addListMember(listId, {
+			email_address: email,
+			status: 'pending'
+		})
+
+		if (!response.id || !unique_email_id) {
+			res.redirect('/not-found.html')
+			res.status(400).json({ message: 'User not added sucessfully' })
+		}
+	}
+	res.status(200).json({ message: 'User added sucessfully' })
 })
 
-app.listen(PORT)
+app.listen(PORT, console.log('Server is Live on Port 5000...'))

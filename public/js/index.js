@@ -48,8 +48,8 @@ btnEl.addEventListener('click', (e) => {
 	}
 
 	fetch('/subscribe', data).then((res) => {
-		if (!res.ok) {
-			return error()
+		if (res.ok) {
+			return 'User Added'
 		}
 	})
 
