@@ -61,7 +61,9 @@ function clearInput() {
 btnEl.addEventListener('click', (e) => {
 	e.preventDefault()
 
-	if (inputEl.value == '') return error()
+	let regex = new RegExp("/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/");
+
+	if (regex.test(inputEl.value) === false) return
 
 	const data = {
 		method: 'POST',
