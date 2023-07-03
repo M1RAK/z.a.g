@@ -45,10 +45,17 @@ main {
 				border: 2px solid #000;
 				border-radius: 8px;
 				box-shadow: var(--bx-1);
+				overflow: hidden;
 
 				&__img {
 					border-radius: 5px 5px 0px 0px;
 					width: 325px;
+					transition: var(--tr-2);
+
+					&:hover {
+						transform: scale(1.02);
+						transition: var(--tr-1);
+					}
 				}
 
 				&__meta {
@@ -60,11 +67,12 @@ main {
 
 				&__title {
 					text-indent: 0.75rem;
+					font-size: 0.95rem;
 				}
 
 				&__price {
 					padding: 0.25rem 0.5rem;
-					background-color: var(--clr-accent);
+					background-color: #000;
 					color: var(--clr-secondary);
 					border-radius: 0 0 5px 0;
 				}
@@ -99,7 +107,6 @@ main {
 
 					.input__container {
 						@include flex(center);
-						
 
 						input {
 							display: inline-flex;
@@ -126,6 +133,30 @@ main {
 									transition: var(--tr-1);
 								}
 							}
+						}
+					}
+				}
+
+				&__success {
+					@include flex(center);
+					flex-direction: column;
+					gap: 1rem;
+					text-align: center;
+
+
+					h2 {
+						color: var(--clr-accent);
+					}
+					.icon-success {
+						@include flex(center);
+						height: 75px;
+						width: 75px;
+
+						border-radius: 50%;
+						border: 2px solid var(--clr-accent);
+						i {
+							color: var(--clr-accent);
+							font-size: var(--fs-700);
 						}
 					}
 				}
@@ -169,6 +200,7 @@ main {
 		}
 	}
 }
+
 
 @media (max-width: 1200px) {
 	main {
@@ -255,14 +287,13 @@ main {
 							font-size: var(--fs-500);
 							white-space: normal;
 						}
-				.input__container{
-					input {
-							
-						width: auto;
-						text-indent: 0.5rem;
-						font-size: 1rem;
-					}
-				}
+						.input__container {
+							input {
+								width: auto;
+								text-indent: 0.5rem;
+								font-size: 1rem;
+							}
+						}
 					}
 				}
 			}

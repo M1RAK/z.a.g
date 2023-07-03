@@ -1,7 +1,6 @@
 //  @IMPORTS
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&display=swap');
 
-
 // BASE STYLES
 * {
 	margin: 0;
@@ -52,11 +51,17 @@ body {
 	cursor: none;
 }
 
+
 // mixins
 @mixin flex($x) {
 	display: flex;
 	justify-content: $x;
 	align-items: center;
+}
+
+// Container
+.container {
+	width: 100%;
 }
 
 // buttons
@@ -67,9 +72,7 @@ body {
 
 	&__container {
 		width: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		@include flex(center);
 	}
 
 	&__cta {
