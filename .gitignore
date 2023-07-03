@@ -2,4 +2,4 @@ node_modules
 *logs.md
 test.js
 .env
-fonts
+*fonts
