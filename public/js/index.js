@@ -3,6 +3,7 @@ const btnEl = document.querySelector('.input__btn--float')
 const filterEls = document.querySelectorAll('.filter__tab')
 const successWrapper = document.querySelector('.newsletter__meta')
 const successEl = document.querySelector('.newsletter__success')
+const errorEl = document.querySelector('.error')
 
 // adds check to filter option
 filterEls.forEach((tab) => {
@@ -31,6 +32,8 @@ function error() {
 
 //  saves subscriber's email to mailchimp
 async function mcPost(data, email) {
+	console.log('data:', data)
+	console.log('email:', email)
 	const res = await fetch('/subscribe', data)
 	const successMsg = `<div class="newsletter__success open">
 			<div class="icon-success">
@@ -61,9 +64,12 @@ function clearInput() {
 btnEl.addEventListener('click', (e) => {
 	e.preventDefault()
 
-	let regex = new RegExp("/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/");
+	let regex =
+		/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$/
 
-	if (regex.test(inputEl.value) === false) return
+	if (!inputEl.value.match(regex)) {
+		return errorEl.classList.add('active')
+	}
 
 	const data = {
 		method: 'POST',

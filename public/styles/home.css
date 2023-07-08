@@ -291,6 +291,14 @@ main .section__newsletter .newsletter__meta h2 {
 main .section__newsletter .newsletter__meta p {
   margin-bottom: 2rem;
 }
+main .section__newsletter .newsletter__meta .error {
+  display: none;
+  color: firebrick;
+  margin-top: 0.5rem;
+}
+main .section__newsletter .newsletter__meta .error.active {
+  display: block;
+}
 main .section__newsletter .newsletter__meta .input__container {
   display: flex;
   justify-content: center;

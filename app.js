@@ -34,7 +34,7 @@ app.post('/subscribe', (req, res) => {
 	const { email } = req.body
 
 	if (!email) res.status(400).json({ message: 'No email Added.' })
-	
+
 	if (email) {
 		addSubscriber(email)
 	}
