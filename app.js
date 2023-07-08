@@ -36,6 +36,7 @@ app.post('/subscribe', (req, res) => {
 	if (!email) res.status(400).json({ message: 'No email Added.' })
 
 	if (email) {
+	
 		addSubscriber(email)
 	}
 	return res.status(200).json({ message: 'User Added Successfully...' })
